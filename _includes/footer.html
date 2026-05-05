@@ -1,0 +1,39 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h3 class="footer-heading">{{ site.title | escape }}</h3>
+        <p>{{ site.description | escape }}</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3 class="footer-heading">Connect</h3>
+        {%- include social.html -%}
+        <p style="margin-top: 1rem;">
+          <a href="https://www.youtube.com/@PublishingStrategySessions" target="_blank" style="font-weight: 600;">📺 YouTube Channel</a>
+        </p>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h3 class="footer-heading">Resources</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="margin-bottom: 0.5rem;"><a href="{{ "/about/" | relative_url }}">About</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="{{ "/" | relative_url }}#newsletter">Newsletter</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="{{ site.feed.path | default: 'feed.xml' | relative_url }}">RSS Feed</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; {{ 'now' | date: "%Y" }} Publishing Strategy Sessions.
+        Built for indie authors and publishers who want actionable strategies.
+      </p>
+    </div>
+
+  </div>
+
+</footer>

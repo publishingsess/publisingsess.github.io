@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="hero-section">
+    <div class="wrapper" style="max-width: 900px; margin: 0 auto;">
+      <p class="post-meta" style="color: rgba(253, 252, 249, 0.7); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.5rem;">
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </time>
+        {%- if page.author -%}
+          • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+        {%- endif -%}
+      </p>
+      <h1 class="post-title p-name" itemprop="name headline" style="color: #FDFCF9; margin-bottom: 1.5rem;">{{ page.title | escape }}</h1>
+
+      {%- if page.description -%}
+        <p class="hero-subtitle" style="font-size: 1.3rem; opacity: 0.9;">{{ page.description }}</p>
+      {%- endif -%}
+    </div>
+  </header>
+
+  <div class="page-content">
+    <div class="wrapper" style="padding-top: 4rem; padding-bottom: 4rem;">
+      <div class="post-content e-content" itemprop="articleBody">
+        {{ content }}
+      </div>
+
+      {%- if site.disqus.shortname -%}
+        {%- include disqus_comments.html -%}
+      {%- endif -%}
+
+      <div style="margin-top: 5rem; padding-top: 3rem; border-top: 2px solid rgba(23, 33, 51, 0.1);">
+        <div class="newsletter-section" style="margin: 0;">
+          <div class="wrapper">
+            <h2>Want More Strategies Like This?</h2>
+            <p>
+              Get actionable publishing tactics delivered to your inbox every week. No fluff—just proven strategies you can implement today.
+            </p>
+            <form class="newsletter-form" action="#" method="post">
+              <input type="email" name="email" placeholder="your@email.com" required>
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <nav style="margin-top: 4rem; display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+        {%- if page.previous.url -%}
+          <a href="{{ page.previous.url | relative_url }}" style="flex: 1; min-width: 200px; padding: 1.5rem; background: #fff; border: 2px solid rgba(23, 33, 51, 0.1); border-radius: 8px; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#D97706'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(23, 33, 51, 0.1)'; this.style.transform='translateY(0)'">
+            <div style="font-size: 0.85rem; color: #D97706; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">← Previous</div>
+            <div style="color: #172133; font-weight: 600;">{{ page.previous.title | escape }}</div>
+          </a>
+        {%- endif -%}
+
+        {%- if page.next.url -%}
+          <a href="{{ page.next.url | relative_url }}" style="flex: 1; min-width: 200px; padding: 1.5rem; background: #fff; border: 2px solid rgba(23, 33, 51, 0.1); border-radius: 8px; text-align: right; transition: all 0.3s ease;" onmouseover="this.style.borderColor='#D97706'; this.style.transform='translateY(-4px)'" onmouseout="this.style.borderColor='rgba(23, 33, 51, 0.1)'; this.style.transform='translateY(0)'">
+            <div style="font-size: 0.85rem; color: #D97706; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Next →</div>
+            <div style="color: #172133; font-weight: 600;">{{ page.next.title | escape }}</div>
+          </a>
+        {%- endif -%}
+      </nav>
+    </div>
+  </div>
+
+</article>

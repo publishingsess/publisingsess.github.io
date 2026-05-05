@@ -1,0 +1,163 @@
+---
+layout: default
+---
+
+<div class="hero-section">
+  <div class="wrapper">
+    <h1>Build a Sustainable, Profitable Publishing Business</h1>
+    <p class="hero-subtitle">
+      Your go-to resource for indie authors and publishers who want real, actionable strategies—not fluff.
+    </p>
+    <div class="cta-buttons">
+      <a href="https://www.youtube.com/@PublishingStrategySessions" class="btn btn-primary" target="_blank">
+        <span>📺 Watch on YouTube</span>
+      </a>
+      <a href="#newsletter" class="btn btn-secondary">
+        <span>Get Weekly Strategies</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="page-content">
+  <div class="wrapper">
+
+    <!-- Features Section -->
+    <div class="content-section">
+      <div class="section-header">
+        <h2>What You'll Learn</h2>
+        <p class="section-subtitle">
+          Proven tactics from analyzing successful indie authors
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">📊</span>
+          <h3>Pricing Strategies</h3>
+          <p>Maximize revenue with proven pricing psychology. Learn when to discount, how to position your books, and pricing tactics that work.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🚀</span>
+          <h3>Launch Tactics</h3>
+          <p>Successful launch strategies that convert. Pre-order campaigns, launch day coordination, and post-launch momentum building.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">💌</span>
+          <h3>Reader Engagement</h3>
+          <p>Build newsletters that get opened, create bonus content readers want, and develop lasting reader relationships.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🛠️</span>
+          <h3>Publishing Tools</h3>
+          <p>Streamline your workflow with the right automation—from formatting to distribution to analytics tracking.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">🔗</span>
+          <h3>Print-to-Digital</h3>
+          <p>Connect physical books to digital experiences with dynamic QR codes, bonus content delivery, and reader communities.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📈</span>
+          <h3>Market Research</h3>
+          <p>Data-driven insights to optimize your publishing strategy and make informed decisions about your business.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-section">
+      <div class="wrapper">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">40-60%</span>
+            <span class="stat-label">Reader Engagement Increase</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">Weekly</span>
+            <span class="stat-label">New Videos & Strategies</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3-6mo</span>
+            <span class="stat-label">Time to See Results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest Posts -->
+    <div class="content-section">
+      <div class="section-header">
+        <h2>Latest Strategies</h2>
+        <p class="section-subtitle">
+          Actionable insights and proven tactics
+        </p>
+      </div>
+
+      {{ content }}
+
+      <ul class="post-list">
+        {% for post in site.posts %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {% if post.excerpt %}
+              <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <!-- Newsletter Section -->
+    <div class="newsletter-section" id="newsletter">
+      <div class="wrapper">
+        <h2>Get Weekly Publishing Strategies</h2>
+        <p>
+          Join indie authors and publishers receiving actionable strategies every week. No fluff—just proven tactics you can implement today.
+        </p>
+        <form class="newsletter-form" action="#" method="post">
+          <input type="email" name="email" placeholder="your@email.com" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Who This Is For -->
+    <div class="content-section">
+      <div class="section-header">
+        <h2>Perfect For</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">✍️</span>
+          <h3>Independent Authors</h3>
+          <p>Building your author business from scratch with sustainable, profitable strategies.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">📚</span>
+          <h3>Self-Publishers</h3>
+          <p>Looking to optimize and scale your publishing operations with proven systems.</p>
+        </div>
+
+        <div class="feature-card">
+          <span class="feature-icon">💼</span>
+          <h3>Publishing Entrepreneurs</h3>
+          <p>Creating sustainable publishing ventures with multiple revenue streams.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

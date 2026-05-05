@@ -1,0 +1,17 @@
+<ul class="social-media-list" style="list-style: none; padding: 0; margin: 0; display: flex; gap: 1rem; flex-wrap: wrap;">
+  {%- if site.github_username -%}
+  <li>
+    <a href="https://github.com/{{ site.github_username | cgi_escape | escape }}" title="{{ site.github_username | escape }}'s GitHub">
+      <svg class="svg-icon grey" style="width: 20px; height: 20px; vertical-align: middle;"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg>
+    </a>
+  </li>
+  {%- endif -%}
+
+  {%- if site.twitter_username -%}
+  <li>
+    <a href="https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}" title="{{ site.twitter_username | escape }}'s Twitter">
+      <svg class="svg-icon grey" style="width: 20px; height: 20px; vertical-align: middle;"><use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use></svg>
+    </a>
+  </li>
+  {%- endif -%}
+</ul>
