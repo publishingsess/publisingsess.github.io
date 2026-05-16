@@ -2,22 +2,7 @@
 layout: default
 ---
 
-<div class="hero-section">
-  <div class="wrapper">
-    <h1>Build a Sustainable, Profitable Publishing Business</h1>
-    <p class="hero-subtitle">
-      Your go-to resource for indie authors and publishers who want real, actionable strategies—not fluff.
-    </p>
-    <div class="cta-buttons">
-      <a href="https://www.youtube.com/@PublishingStrategySessions" class="btn btn-primary" target="_blank">
-        <span>📺 Watch on YouTube</span>
-      </a>
-      <a href="#newsletter" class="btn btn-secondary">
-        <span>Get Weekly Strategies</span>
-      </a>
-    </div>
-  </div>
-</div>
+{%- include hero.html -%}
 
 <div class="page-content">
   <div class="wrapper">
@@ -119,18 +104,7 @@ layout: default
     </div>
 
     <!-- Newsletter Section -->
-    <div class="newsletter-section" id="newsletter">
-      <div class="wrapper">
-        <h2>Get Weekly Publishing Strategies</h2>
-        <p>
-          Join indie authors and publishers receiving actionable strategies every week. No fluff—just proven tactics you can implement today.
-        </p>
-        <form class="newsletter-form" action="#" method="post">
-          <input type="email" name="email" placeholder="your@email.com" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
+    {%- include newsletter.html -%}
 
     <!-- Who This Is For -->
     <div class="content-section">

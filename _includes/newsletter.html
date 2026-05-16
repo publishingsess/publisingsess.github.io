@@ -1,0 +1,12 @@
+<div class="newsletter-section" id="newsletter">
+  <div class="wrapper">
+    <h2>{{ include.title | default: "Get Weekly Publishing Strategies" }}</h2>
+    <p>
+      {{ include.description | default: "Join indie authors and publishers receiving actionable strategies every week. No fluff—just proven tactics you can implement today." }}
+    </p>
+    <form class="newsletter-form" action="{{ include.action | default: "#" }}" method="post">
+      <input type="email" name="email" placeholder="{{ include.placeholder | default: "your@email.com" }}" required>
+      <button type="submit">{{ include.button_text | default: "Subscribe" }}</button>
+    </form>
+  </div>
+</div>

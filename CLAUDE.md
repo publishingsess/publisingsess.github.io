@@ -28,16 +28,28 @@ The development server runs at `http://localhost:4000` and auto-regenerates when
 
 Jekyll uses a layout inheritance system:
 
-- `_layouts/default.html` - Base template with HTML structure, includes header/footer, scroll effects JavaScript
-- `_layouts/home.html` - Homepage layout (extends default) with hero section, features grid, stats, newsletter
+- `_layouts/default.html` - Base template with HTML structure, includes header/footer/scripts
+- `_layouts/home.html` - Homepage layout (extends default) with hero, features grid, stats, newsletter
 - `_layouts/post.html` - Blog post layout (extends default) with post-specific styling
 - `_layouts/page.html` - Static page layout (extends default)
 
-All layouts reference includes from `_includes/`:
-- `head.html` - Meta tags, stylesheets, fonts
+### Component Architecture
+
+All reusable components live in `_includes/` (see `_includes/README.md` for full documentation):
+
+**Core Layout Components:**
+- `head.html` - Meta tags, stylesheets, fonts, analytics
 - `header.html` - Site navigation and logo
 - `footer.html` - Footer with links and social
-- `social.html` - Social media icons component
+- `social.html` - Social media icons
+
+**Feature Components:**
+- `hero.html` - Split-screen hero section with presenter image (customizable via parameters)
+- `newsletter.html` - Newsletter signup section (customizable via parameters)
+- `scripts.html` - Interactive JavaScript (scroll effects, animations)
+- `analytics.html` - Umami Analytics tracking (production only)
+
+**To modify components:** Edit the include file - changes propagate across all pages that use it.
 
 ### Styling Architecture
 
@@ -102,11 +114,35 @@ categories: publishing strategy
 
 `_config.yml` contains:
 - Site metadata (title, description, email, URLs)
-- Social media usernames
+- Social media usernames and links
+- Open Graph defaults (image, social profiles)
 - Theme and plugin configuration
 - Build settings
 
 **Social links** are automatically generated from `twitter_username` and `github_username` config values.
+
+## Open Graph & Social Sharing
+
+**Setup:**
+- Default OG image: `/assets/images/open-graph-thumbnail.png` (1424x752 PNG)
+- `jekyll-seo-tag` plugin generates standard meta tags
+- `opengraph.html` include adds enhanced OG/Twitter Card tags
+- All pages automatically include OG metadata via `head.html`
+
+**Page-level customization:**
+```yaml
+---
+layout: post
+title: "Your Post Title"
+description: "Custom description for social sharing"
+image: /assets/images/custom-og-image.png
+---
+```
+
+**Testing:**
+- Facebook Debugger: https://developers.facebook.com/tools/debug/
+- Twitter Card Validator: https://cards-dev.twitter.com/validator
+- LinkedIn Post Inspector: https://www.linkedin.com/post-inspector/
 
 ## Key Files to Modify
 
@@ -114,9 +150,13 @@ categories: publishing strategy
 |------|---------|
 | Add blog post | `_posts/YYYY-MM-DD-title.markdown` |
 | Change brand colors | `assets/css/style.scss` (SCSS variables) |
+| Modify hero section | `_includes/hero.html` |
+| Modify newsletter section | `_includes/newsletter.html` |
 | Modify homepage sections | `_layouts/home.html` |
 | Change navigation | `_includes/header.html` |
 | Update footer | `_includes/footer.html` |
+| Change JavaScript behavior | `_includes/scripts.html` |
+| Update analytics/tracking | `_includes/analytics.html` |
 | Add new page | Create `pagename.markdown` in root |
 | Change site metadata | `_config.yml` |
 
