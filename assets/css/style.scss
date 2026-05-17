@@ -314,11 +314,16 @@ h3 {
 
 .btn-primary {
   background-color: $brand-accent;
-  color: $brand-white;
+  color: $brand-white !important;
   box-shadow: 0 4px 12px rgba($brand-accent, 0.3);
+
+  span {
+    color: $brand-white !important;
+  }
 
   &:hover {
     background-color: $brand-accent-dark;
+    color: $brand-white !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba($brand-accent, 0.4);
   }
