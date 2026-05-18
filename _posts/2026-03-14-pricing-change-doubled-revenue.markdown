@@ -5,6 +5,7 @@ date: 2026-03-14 10:00:00 +0200
 categories: pricing strategy revenue
 description: "After analyzing over 100 successful indie authors, I found the one pricing change that doubled their revenue. Data-driven pricing strategies that actually work."
 image: /assets/images/open-graph-thumbnail.png
+show_minz_promo: true
 ---
 
 After analyzing over 100 successful indie authors, I found the one pricing change that doubled their revenue. And it’s not what you think. Whether you’re struggling with pricing decisions or just want to maximize your book revenue, this article will give you the data-driven strategies you need.

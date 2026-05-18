@@ -17,7 +17,7 @@ layout: default
       <h1 class="post-title p-name" itemprop="name headline" style="color: #FDFCF9; margin-bottom: 1.5rem;">{{ page.title | escape }}</h1>
 
       {%- if page.description -%}
-        <p class="hero-subtitle" style="font-size: 1.3rem; opacity: 0.9;">{{ page.description }}</p>
+        <p class="hero-subtitle" style="font-size: 1.3rem; color: rgba(253, 252, 249, 0.9); opacity: 0.95;">{{ page.description }}</p>
       {%- endif -%}
     </div>
   </header>
@@ -27,6 +27,33 @@ layout: default
       <div class="post-content e-content" itemprop="articleBody">
         {{ content }}
       </div>
+
+      {%- if page.show_minz_promo -%}
+      <script>
+        (function() {
+          // Find the post content container
+          var postContent = document.querySelector('.post-content');
+          if (!postContent) return;
+
+          // Get all direct child paragraphs and headings
+          var elements = postContent.querySelectorAll('p, h2, h3');
+          if (elements.length < 3) return;
+
+          // Calculate middle position (insert after ~40% of content)
+          var insertPosition = Math.floor(elements.length * 0.4);
+          var targetElement = elements[insertPosition];
+
+          // Create the promo element
+          var promoDiv = document.createElement('div');
+          promoDiv.innerHTML = `{% include minz-promo.html %}`;
+
+          // Insert after the target element
+          if (targetElement && targetElement.parentNode) {
+            targetElement.parentNode.insertBefore(promoDiv.firstChild, targetElement.nextSibling);
+          }
+        })();
+      </script>
+      {%- endif -%}
 
       {%- if site.disqus.shortname -%}
         {%- include disqus_comments.html -%}

@@ -187,6 +187,38 @@ h3 {
   overflow: hidden;
 }
 
+/* Post Hero Section */
+.post .hero-section {
+  background: linear-gradient(135deg, $brand-deep-navy 0%, $brand-dark-navy 100%);
+  padding: 5rem 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(217, 119, 6, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .post-meta,
+  .post-title,
+  .hero-subtitle {
+    position: relative;
+    z-index: 2;
+  }
+}
+
 .hero-container {
   display: flex;
   min-height: 600px;
@@ -810,10 +842,28 @@ a {
   color: $brand-white;
 }
 
+/* Minz Promo Callout */
+.minz-promo-callout {
+  animation: fadeInUp 0.6s ease-out;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 800px) {
   body {
     font-size: 16px;
+  }
+
+  .minz-promo-callout {
+    padding: 1.5rem !important;
+    margin: 2rem 0 !important;
+
+    h3 {
+      font-size: 1.4rem !important;
+    }
+
+    p {
+      font-size: 1rem !important;
+    }
   }
 
   h1 {
@@ -880,6 +930,10 @@ a {
 
   .content-section .section-header h2 {
     font-size: 2.25rem;
+  }
+
+  .post .hero-section {
+    padding: 3rem 0;
   }
 }
 

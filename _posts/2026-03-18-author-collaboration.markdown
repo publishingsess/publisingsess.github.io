@@ -5,6 +5,7 @@ date: 2026-03-18 10:00:00 +0200
 categories: collaboration strategy author-community
 description: "The authors making six figures aren't competing with other writers—they're collaborating. Learn how author partnerships can increase sales tenfold in a single year."
 image: /assets/images/open-graph-thumbnail.png
+show_minz_promo: true
 ---
 
 Here's something most struggling authors don't realize. The authors making six figures aren't competing with other writers. They're collaborating with them.
