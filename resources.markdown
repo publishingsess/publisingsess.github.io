@@ -127,14 +127,6 @@ permalink: /resources/
           <strong><a href="https://kdp-pilot.com?fpr=minz" target="_blank">KDP-Pilot</a></strong>
           <p>Comprehensive Amazon KDP audit and optimization tool to improve book metadata, keywords, and sales performance</p>
         </li>
-        <li>
-          <strong><a href="https://www.novelrank.com" target="_blank">NovelRank</a></strong>
-          <p>Track Amazon sales rank history for any book</p>
-        </li>
-        <li>
-          <strong><a href="https://kdpreports.com" target="_blank">KDP Reports</a></strong>
-          <p>Enhanced reporting for your Amazon KDP sales data</p>
-        </li>
       </ul>
     </div>
 
