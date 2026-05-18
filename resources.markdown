@@ -117,10 +117,6 @@ permalink: /resources/
           <strong><a href="https://www.bookbub.com/partners" target="_blank">BookBub</a></strong>
           <p>Promote discounted books to millions of readers</p>
         </li>
-        <li>
-          <strong><a href="https://www.written-word-media.com" target="_blank">Written Word Media</a></strong>
-          <p>Book promotion services and reader email lists</p>
-        </li>
       </ul>
     </div>
 
