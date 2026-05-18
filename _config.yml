@@ -27,7 +27,6 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://publishing-strategy-sessions.com" # the base hostname & protocol for your site
 twitter_username: pubstrategysess
-github_username:  publishing-strategy-sessions
 
 # Social Media & Open Graph
 logo: /assets/images/open-graph-thumbnail.png
@@ -36,7 +35,6 @@ social:
   links:
     - https://twitter.com/pubstrategysess
     - https://www.youtube.com/@PublishingStrategySessions
-    - https://github.com/publishing-strategy-sessions
 
 # Default Open Graph image for all pages
 defaults:

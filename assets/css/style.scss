@@ -50,12 +50,18 @@ body {
   position: relative;
   z-index: 2;
   margin-top: 0;
-  padding-top: 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 main.page-content {
   padding: 0;
   margin: 0;
+}
+
+.page-content .wrapper {
+  max-width: 900px !important;
+  margin: 0 auto;
 }
 
 /* Wider Content Container */
@@ -176,6 +182,47 @@ h3 {
         width: 100%;
       }
     }
+  }
+}
+
+/* Page Title Section */
+.page-title-section {
+  background: linear-gradient(135deg, $brand-deep-navy 0%, $brand-dark-navy 100%);
+  padding: 2rem 0 2.5rem;
+  margin-top: 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(217, 119, 6, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 900px !important;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: $brand-background;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+  }
+
+  .title-accent {
+    width: 80px;
+    height: 4px;
+    background: $brand-accent;
+    border-radius: 2px;
   }
 }
 
@@ -503,11 +550,11 @@ h3 {
 
 /* Content Sections */
 .content-section {
-  margin: 5rem 0;
+  margin: 0;
 
   .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     position: relative;
 
     &::after {
@@ -516,11 +563,12 @@ h3 {
       width: 80px;
       height: 4px;
       background: $brand-accent;
-      margin: 2rem auto 0;
+      margin: 1.5rem auto 0;
     }
 
     h2 {
       margin-bottom: 1rem;
+      margin-top: 0;
       font-size: 3rem;
     }
 
@@ -851,6 +899,19 @@ a {
 @media screen and (max-width: 800px) {
   body {
     font-size: 16px;
+  }
+
+  .page-title-section {
+    padding: 1.5rem 0 2rem;
+
+    h1 {
+      font-size: 2.25rem;
+    }
+  }
+
+  .page-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .minz-promo-callout {
