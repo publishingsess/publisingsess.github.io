@@ -4,9 +4,11 @@
     <p>
       {{ include.description | default: "Join indie authors and publishers receiving actionable strategies every week. No fluff—just proven tactics you can implement today." }}
     </p>
-    <form class="newsletter-form" action="{{ include.action | default: "#" }}" method="post">
+    <form class="newsletter-form">
       <input type="email" name="email" placeholder="{{ include.placeholder | default: "your@email.com" }}" required>
+      <input type="text" name="name" placeholder="{{ include.name_placeholder | default: "Your name (optional)" }}">
       <button type="submit">{{ include.button_text | default: "Subscribe" }}</button>
     </form>
+    <p class="newsletter-msg" style="display:none; margin-top: 1rem; font-weight: 600;"></p>
   </div>
 </div>

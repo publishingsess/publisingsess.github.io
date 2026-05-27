@@ -687,9 +687,10 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
 
-    input[type="email"] {
+    input[type="email"],
+    input[type="text"] {
       flex: 1;
-      min-width: 250px;
+      min-width: 200px;
       padding: 1rem 1.5rem;
       border: 2px solid rgba($brand-white, 0.3);
       border-radius: 6px;
@@ -980,6 +981,7 @@ a {
     flex-direction: column;
 
     input[type="email"],
+    input[type="text"],
     button {
       width: 100%;
     }

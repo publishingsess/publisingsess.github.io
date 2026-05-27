@@ -60,18 +60,9 @@ layout: default
       {%- endif -%}
 
       <div style="margin-top: 5rem; padding-top: 3rem; border-top: 2px solid rgba(23, 33, 51, 0.1);">
-        <div class="newsletter-section" style="margin: 0;">
-          <div class="wrapper">
-            <h2>Want More Strategies Like This?</h2>
-            <p>
-              Get actionable publishing tactics delivered to your inbox every week. No fluff—just proven strategies you can implement today.
-            </p>
-            <form class="newsletter-form" action="#" method="post">
-              <input type="email" name="email" placeholder="your@email.com" required>
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
-        </div>
+        {%- include newsletter.html
+            title="Want More Strategies Like This?"
+            description="Get actionable publishing tactics delivered to your inbox every week. No fluff—just proven strategies you can implement today." -%}
       </div>
 
       <nav style="margin-top: 4rem; display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">

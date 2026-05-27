@@ -62,4 +62,49 @@
     item.style.transition = `opacity 0.6s ease ${index * 0.15}s, transform 0.6s ease ${index * 0.15}s`;
     observer.observe(item);
   });
+
+  // Newsletter subscription (Listmonk)
+  document.querySelectorAll('.newsletter-form').forEach(function(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = form.querySelector('input[type="email"]').value;
+      var nameInput = form.querySelector('input[name="name"]');
+      var name = nameInput ? nameInput.value : '';
+      var btn = form.querySelector('button[type="submit"]');
+      var msg = form.closest('.newsletter-section').querySelector('.newsletter-msg');
+
+      btn.disabled = true;
+      btn.textContent = 'Subscribing...';
+
+      fetch('https://newsletter.minz.at/api/public/subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          name: name || undefined,
+          list_uuids: ['ae7a1bf3-caf3-4dba-9791-a7a30a8d0f34']
+        })
+      })
+      .then(function(r) { return r.json().then(function(d) { return { ok: r.ok, data: d }; }); })
+      .then(function(res) {
+        if (msg) {
+          msg.style.display = 'block';
+          msg.style.color = '#16a34a';
+          msg.textContent = 'Check your inbox to confirm your subscription!';
+        }
+        form.reset();
+      })
+      .catch(function() {
+        if (msg) {
+          msg.style.display = 'block';
+          msg.style.color = '#dc2626';
+          msg.textContent = 'Something went wrong. Please try again.';
+        }
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+      });
+    });
+  });
 </script>
